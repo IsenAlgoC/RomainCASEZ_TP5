@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EXERCICE1.c" />
+    <ClCompile Include="EXERCICE2.c" />
     <ClCompile Include="tab.c" />
   </ItemGroup>
   <ItemGroup>
