@@ -3,37 +3,31 @@
 
 #include"tab.h" // fichier d'entete déclaré avec " " 
 
-#define TAB2SIZE 100
-#define nbElts 100
-
-
+#define TAB2SIZE 100 // on 
 
 main() {
-	int myTab1[10];
-	initTab(myTab1, 10);
-	afficheTab(myTab1, 10, 10);
+	int* myTab2 = (int*)malloc(TAB2SIZE * sizeof(int));
 
-	int* tabSize = TAB2SIZE;
-	int *myTab2 = NULL;
+	// Remplissage du tableau avec des 0
+	initTab(myTab2, TAB2SIZE);
 
-	myTab2 = (int*)malloc(TAB2SIZE * sizeof(int));
+	// Remplissage des 20 premières valeures du tableau avec les nombres de 1 à 20
 	if (myTab2 != NULL) {
-		initTab(myTab2, tabSize);
-	}
-	else {
-		printf("mémoire insuffisante"); return(-1);
-	}
-	for (int i = 0; i < 20; i++) {
-		myTab2[i] = i+1;
+		for (int i = 0; i < 20; i++) {
+			*(myTab2 + i) = i + 1;
+		}
 	}
 
+	// Affichage tu tableau
 	afficheTab(myTab2, TAB2SIZE, 20);
-	if (myTab2 != NULL) { free(myTab2); }
+	printf("\n\n");
 
-	ajoutElementDansTableau(myTab2, &tabSize, nbElts, 17);
-	afficheTab(myTab2, TAB2SIZE, nbElts + 1);
+	// Ici, on ajoute l'élement 101 à la place  101 du tableau. Réallocation de mémoire nécéssaire.
+	int size = TAB2SIZE;
+	int nbElmts = 100;
+	ajoutElementDansTableau(myTab2, &size, &nbElmts, 101);
+	afficheTab(myTab2, size,101);
 
-	return EXIT_SUCCESS;
-
-
+	// Destruction du tableau
+	free(myTab2);
 }
