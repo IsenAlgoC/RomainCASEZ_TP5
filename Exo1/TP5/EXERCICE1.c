@@ -3,7 +3,7 @@
 
 #include"tab.h" // fichier d'entete déclaré avec " " 
 
-#define TAB2SIZE 100 // on 
+#define TAB2SIZE 100 
 
 main() {
 	int* myTab2 = (int*)malloc(TAB2SIZE * sizeof(int));
