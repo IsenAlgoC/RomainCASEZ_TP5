@@ -11,7 +11,7 @@ main() {
 	// Remplissage du tableau avec des 0
 	initTab(myTab2, TAB2SIZE);
 
-	// Remplissage des 20 premières valeures du tableau avec les nombres de 1 à 20
+	// Remplissage des 20 premières valeures du tableau avec les nombres de 1 à 20.
 	if (myTab2 != NULL) {
 		for (int i = 0; i < 20; i++) {
 			*(myTab2 + i) = i + 1;
